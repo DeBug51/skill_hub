@@ -6,6 +6,7 @@ require("dotenv").config()
 //import routes
 const chatRoute = require("./routes/chat")
 const feedRoute = require("./routes/feed")
+const userRoute = require("./routes/user")
 
 // create express app
 const app = express()
@@ -16,6 +17,7 @@ app.use(express.json())
 //routes
 app.use("/api/chat", chatRoute)
 app.use("/api/feed", feedRoute)
+app.use("/api/user", userRoute)
 
 // test
 app.get("/", (req, res) => {

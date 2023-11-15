@@ -16,6 +16,7 @@ const Feed = () => {
         }
         getPosts()
     }, [])
+    
     return (
         <div className="Feed">
             {posts && posts.map(post => (
