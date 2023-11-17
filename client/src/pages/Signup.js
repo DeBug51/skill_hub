@@ -15,7 +15,7 @@ const Signup = () => {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({ userName, email, password })
         })
-        const json = response.json()
+        const json = await response.json()
 
         if (!response.ok) {
             setError(json.error)

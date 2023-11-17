@@ -12,7 +12,7 @@ const useCookie = () => {
     }
 
     const removeCookie = (name) => {
-        Cookie.remove()
+        Cookie.remove(name)
     }
 
     return { setCookie, getCookie, removeCookie }

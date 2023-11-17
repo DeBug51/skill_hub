@@ -19,11 +19,6 @@ app.use("/api/chat", chatRoute)
 app.use("/api/feed", feedRoute)
 app.use("/api/user", userRoute)
 
-// test
-app.get("/", (req, res) => {
-    res.json({})
-})
-
 // connect to mongodb
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {

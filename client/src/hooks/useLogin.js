@@ -7,9 +7,10 @@ import { useCookie } from "./useCookie"
 
 const useLogin = () => {
     const [error, setError] = useState(null)
-    const { dispatch } = useAuthContext()
+    const { user, dispatch } = useAuthContext()
     const { setCookie } = useCookie()
     const navigate = useNavigate()
+
 
     const login = async (email, password) => {
         const response = await fetch("/api/user/login", {
@@ -17,7 +18,7 @@ const useLogin = () => {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({ email, password })
         })
-        const json = response.json()
+        const json = await response.json()
 
         if (!response.ok) {
             setError(json.error)

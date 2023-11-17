@@ -1,26 +1,26 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
+
+// import hooks
+import { usePost } from "../hooks/usePost"
 
 // import components
 import DisplayPost from "../components/DisplayPost"
 
 const Feed = () => {
-    const [posts, setPosts] = useState(null)
+    const { getPosts, posts } = usePost()
 
     useEffect(() => {
-        const getPosts = async () => {
-            const response = await fetch("/api/feed/posts", {
-                method: "GET"
-            })
-            const json = await response.json()
-            setPosts(json)
+        const getAllPosts = async () => {
+            const json = await getPosts()
+            getPosts(json)
         }
-        getPosts()
+        getAllPosts()
     }, [])
     
     return (
         <div className="Feed">
             {posts && posts.map(post => (
-                <DisplayPost post={post}></DisplayPost>
+                <DisplayPost post={ post }></DisplayPost>
             ))}
         </div>
     )
