@@ -2,7 +2,6 @@
 const Posts = require("../models/postModel")
 
 // define controllers
-
 const getPosts = async (req, res) => {
     try {
         const posts = await Posts.find({}).select("creatorName content voteCount commentCount createdAt").sort({ createdAt: -1 })
@@ -51,9 +50,9 @@ const getComments = async (req, res) => {
 
 const addComment = async (req, res) => {
     try{
-        const { postId } = req.params
-        const { userId, userName, comment } = req.body
+        const { postId, userId, userName, comment } = req.body
         const post = await Posts.findByIdAndUpdate(postId, { $push: { comments: { userId, userName, comment } }, $inc: { commentCount: 1 } }, {returnOriginal: false})
+        .select("-_id comments.userName comments.comment comments.createdAt")
         res.status(200).json(post)
     } catch(error){
         res.status(400).json({ error: error.message })

@@ -58,15 +58,17 @@ const usePost = () => {
     }
 
     const addComment = async (postId, userId, userName, comment) => {
-        const response = await fetch("/api/feed/comments/" + postId, {
+        const response = await fetch("/api/feed/comments", {
             method: "PATCH",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({ userId, userName, comment })
+            body: JSON.stringify({ postId, userId, userName, comment })
         })
         const json = await response.json()
 
         if (!response.ok) {
             setError(json.error)
+        } else {
+            setComments(json.comments)
         }
     }
 

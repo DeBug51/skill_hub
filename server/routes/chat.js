@@ -4,10 +4,10 @@ const router = require("express").Router()
 const { getHeads, getChats, sendText } = require("../controllers/chatControl")
 
 // define routes
-router.get("/heads", getHeads)
+router.get("/heads/:userId", getHeads)
 
-router.get("/chats", getChats)
+router.get("/texts/:chatId", getChats)
 
-router.post("/chats", sendText)
+router.patch("/texts", sendText)
 
 module.exports = router

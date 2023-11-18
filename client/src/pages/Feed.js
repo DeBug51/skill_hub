@@ -11,8 +11,7 @@ const Feed = () => {
 
     useEffect(() => {
         const getAllPosts = async () => {
-            const json = await getPosts()
-            getPosts(json)
+            await getPosts()
         }
         getAllPosts()
     }, [])
@@ -20,7 +19,7 @@ const Feed = () => {
     return (
         <div className="Feed">
             {posts && posts.map(post => (
-                <DisplayPost post={ post }></DisplayPost>
+                <DisplayPost post = { post }></DisplayPost>
             ))}
         </div>
     )

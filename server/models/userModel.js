@@ -3,10 +3,17 @@ const Schema = mongoose.Schema
 
 const bcrypt = require("bcrypt")
 
+const connectSchema = new Schema({
+    userId: { type: mongoose.Schema.Types.ObjectId, required: true, ref: "Users" },
+    userName: { type: String, required: true },
+    chatId: { type: mongoose.Schema.Types.ObjectId, required: true, ref: "Chats" }
+})
+
 const userSchema = new Schema({
     userName: { type: String, required: true },
     email: { type: String, required: true, unique: true },
-    password: { type: String, required: true }
+    password: { type: String, required: true },
+    connections: [ connectSchema ]
 })
 
 // define methods
@@ -19,13 +26,13 @@ userSchema.statics.signup = async function (userName, email, password) {
     const salt = await bcrypt.genSalt(10)
     const passhash = await bcrypt.hash(password, salt)
     
-    const user = await this.create({ userName, email, password: passhash })
+    const user = await this.create({ userName, email, password: passhash, connections: [] })
     
     return user
 }
 
 userSchema.statics.login = async function (email, password) {
-    const user = await this.findOne({ email })
+    const user = await this.findOne({ email }).select("userName password")
     if (!user) {
         throw Error("Email does not match.")
     }

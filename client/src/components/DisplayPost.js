@@ -13,7 +13,6 @@ const DisplayPost = ({ post }) => {
     const [userComm, setUserComm] = useState("")
 
     const handleUpvote = async () => {
-        console.log(post._id, user._id, user.userName)
         await addUpvote(post._id, user._id, user.userName)
     }
 
@@ -43,17 +42,17 @@ const DisplayPost = ({ post }) => {
                 <DisplayComment comment={ comment }></DisplayComment>
             ))}
             <form className="commentform" onSubmit={ handleComment }>
-            <label>Comment:</label>
-            <input
-                type = "text"
-                onChange = {(e) => setUserComm(e.target.value)}
-                value = { userComm }
-            />
-            <input
-                type = "submit"
-                value = { "Login" }
-            />
-        </form>
+                <label>Comment:</label>
+                <input
+                    type = "text"
+                    onChange = {(e) => setUserComm(e.target.value)}
+                    value = { userComm }
+                />
+                <input
+                    type = "submit"
+                    value = { "Comment" }
+                />
+            </form>
         </div>
     );
 }

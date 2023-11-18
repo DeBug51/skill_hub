@@ -24,7 +24,7 @@ const useLogin = () => {
             setError(json.error)
         } else {
             dispatch({ type: "LOGIN", payload: json })
-            setCookie("user", json)
+            setCookie("user", JSON.stringify(json))
             navigate("/feed")
         }
     }

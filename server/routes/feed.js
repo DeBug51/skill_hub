@@ -12,6 +12,6 @@ router.patch("/upvotes/:postId", addUpvote)
 
 router.get("/comments/:postId", getComments)
 
-router.patch("/comments/:postId", addComment)
+router.patch("/comments/", addComment)
 
 module.exports = router
