@@ -16,6 +16,7 @@ const NavBar = () => {
         <nav>
             <Link to = "/">SkillHub</Link>
             {user && <ul>
+                <li><Link to = "/connect">Connect</Link></li>
                 <li><Link to = "/feed">Feed</Link></li>
                 <li><Link to = "/chat">Chat</Link></li>
                 <button onClick={ handleLogout }>Logout</button>

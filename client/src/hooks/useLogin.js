@@ -7,7 +7,7 @@ import { useCookie } from "./useCookie"
 
 const useLogin = () => {
     const [error, setError] = useState(null)
-    const { user, dispatch } = useAuthContext()
+    const { dispatch } = useAuthContext()
     const { setCookie } = useCookie()
     const navigate = useNavigate()
 
