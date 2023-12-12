@@ -1,3 +1,4 @@
+import "./Feed.css"
 import { useEffect } from "react"
 
 // import hooks
@@ -17,7 +18,7 @@ const Feed = () => {
     }, [])
     
     return (
-        <div className="Feed">
+        <div className="feed">
             {posts && posts.map(post => (
                 <DisplayPost post = { post }></DisplayPost>
             ))}

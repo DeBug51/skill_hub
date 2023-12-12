@@ -1,3 +1,4 @@
+import "./Connect.css"
 import { useEffect } from "react"
 
 // import hooks

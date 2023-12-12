@@ -1,0 +1,34 @@
+.user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--tertiary);
+    margin: 5px;
+    width: 600px;
+}
+
+.user .name {
+    color: var(--quaternary);
+    font-size: 15px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.user .button {
+    position: relative;
+    padding: 2px 5px;
+    color: var(--primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 15px;
+    background: transparent;
+    border-radius: 5px;
+}
+
+.user .button:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
+    transition-delay: 0.2s;
+    cursor: pointer;
+}

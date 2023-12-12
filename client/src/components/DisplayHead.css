@@ -1,0 +1,16 @@
+.disphead {
+    background-color: var(--quinary);
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.disphead:hover {
+    background-color: var(--background);
+    color: var(--primary);
+    cursor: pointer;
+}

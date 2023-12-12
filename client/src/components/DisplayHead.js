@@ -1,7 +1,9 @@
+import "./DisplayHead.css"
+
 const DisplayHead = ({ head }) => {
     return (
-        <div>
-            <button>{head.userName}</button>
+        <div className="disphead">
+            <p>{head.userName}</p>
         </div>
     );
 }

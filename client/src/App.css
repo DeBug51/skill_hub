@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --background: rgb(22, 22, 22);
+  --primary: turquoise;
+  --secondary: rgb(242, 242, 242);
+  --tertiary: rgb(50, 50, 50);
+  --quaternary: crimson;
+  --quinary: rgb(70, 70, 70);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.app .pages {
+  padding-top: 40px;
+}

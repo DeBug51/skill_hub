@@ -1,3 +1,5 @@
+import "./DisplayUser.css"
+
 // import hooks
 import { useConnect } from "../hooks/useConnect";
 import { useAuthContext } from "../hooks/useAuthContext"
@@ -12,8 +14,8 @@ const DisplayUser = ({ tarUser }) => {
 
     return (
         <div className="user">
-            <p>{ tarUser.userName }</p>
-            <button onClick={handleConnect}>Connect</button>
+            <p className="name">{ tarUser.userName }</p>
+            <div className="button" onClick={handleConnect}>Connect</div>
         </div>
     );
 }

@@ -1,0 +1,25 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    color: var(--secondary);
+}
+
+.home .welcome {
+    font-size: 35px;
+}
+
+.home .name {
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.home .name span {
+    color: var(--primary);
+}
+
+.home .moto {
+    font-size: 15px;
+}

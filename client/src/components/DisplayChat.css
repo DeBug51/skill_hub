@@ -1,0 +1,13 @@
+.dispchat {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    color: var(--secondary);
+    background-color: var(--quinary);
+    border-radius: 15px;
+}
+
+.dispchat.user {
+    margin-left: auto;
+    background-color: var(--quaternary);
+}

@@ -1,0 +1,86 @@
+.post {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    width: 600px;
+    background-color: var(--tertiary);
+    border-radius: 5px;
+}
+
+.post .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.post .container .name {
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.post .container .content {
+    color: var(--secondary);
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.post .container .stat{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.post .container .stat p {
+    color: var(--secondary);
+    font-size: 15px;
+}
+
+.post .react {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--secondary);
+    height: 50px;
+}
+
+.post .react p {
+    text-align: center;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.post .react p:hover {
+    background-color: var(--quaternary);
+    cursor: pointer;
+}
+
+.post .commentform {
+    justify-content: space-between;
+}
+
+.post .commentform .box {
+    width: 450px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.post .commentform .button {
+    position: relative;
+    padding: 2px 5px;
+    color: var(--primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 15px;
+    background: transparent;
+    border-radius: 5px;
+}
+
+.post .commentform  .button:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
+    transition-delay: 0.2s;
+    cursor: pointer;
+}

@@ -1,3 +1,5 @@
+import "./Signup.css"
+
 import { useNavigate } from "react-router-dom"
 import { useState } from "react";
 
@@ -25,7 +27,7 @@ const Signup = () => {
     }
 
     return (
-        <div className="Signup">
+        <div className="signup">
             <form className="signupform" onSubmit={ handleSignup }>
                 <p>Signup</p>
                 <label>User Name:</label>
@@ -46,7 +48,7 @@ const Signup = () => {
                     onChange = {(e) => setPassword(e.target.value)}
                     value = { password }
                 />
-                <input
+                <input className="button"
                     type = "submit"
                     value = { "Signup" }
                 />
