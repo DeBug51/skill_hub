@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const Signup = () => {
     const [userName, setUserName] = useState("")
+    const [userType, setUserType] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState(null)
@@ -13,7 +14,7 @@ const Signup = () => {
         const response = await fetch("/api/user/signup", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({ userName, email, password })
+            body: JSON.stringify({ userName, userType, email, password })
         })
         const json = await response.json()
 
@@ -34,6 +35,11 @@ const Signup = () => {
                     onChange = {(e) => setUserName(e.target.value)}
                     value = { userName }
                 />
+                <label>User Type:</label>
+                <select value={userType} onChange={(e) => setUserType(e.target.value)}>
+                    <option value="Company">Company</option>
+                    <option value="Student">Student</option>
+                </select>
                 <label>Email:</label>
                 <input
                     type = "email"

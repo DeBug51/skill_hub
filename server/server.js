@@ -7,6 +7,8 @@ require("dotenv").config()
 const chatRoute = require("./routes/chat")
 const feedRoute = require("./routes/feed")
 const userRoute = require("./routes/user")
+const profileRoute = require('./routes/profile')
+const taskRoute = require('./routes/task')
 
 // create express app
 const app = express()
@@ -18,6 +20,9 @@ app.use(express.json())
 app.use("/api/chat", chatRoute)
 app.use("/api/feed", feedRoute)
 app.use("/api/user", userRoute)
+app.use("/api/profile", profileRoute)
+app.use("/api/task",taskRoute)
+
 
 // connect to mongodb
 mongoose.connect(process.env.MONGO_URI)

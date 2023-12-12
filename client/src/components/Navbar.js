@@ -18,6 +18,7 @@ const NavBar = () => {
             {user && <ul>
                 <li><Link to = "/feed">Feed</Link></li>
                 <li><Link to = "/chat">Chat</Link></li>
+                <li><Link to = "/profile">Profile</Link></li>
                 <button onClick={ handleLogout }>Logout</button>
             </ul>}
             {!user && <ul>

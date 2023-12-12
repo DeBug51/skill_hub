@@ -7,6 +7,8 @@ import Feed from './pages/Feed'
 import Chat from './pages/Chat'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
+import Test from './pages/Test'
+import Profile from './pages/Profile'
 
 // import components
 import NavBar from './components/Navbar';
@@ -37,6 +39,14 @@ function App() {
             <Route
               path = "/chat"
               element = {<Chat />}
+            />
+            <Route
+              path = "/test"
+              element = {<Test />}
+            />
+            <Route
+              path = "/profile"
+              element = {<Profile />}
             />
           </Routes>
         </div>

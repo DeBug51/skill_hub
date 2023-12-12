@@ -11,13 +11,14 @@ const connectSchema = new Schema({
 
 const userSchema = new Schema({
     userName: { type: String, required: true },
+    userType:{type: String, required: true},
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     connections: [ connectSchema ]
 })
 
 // define methods
-userSchema.statics.signup = async function (userName, email, password) {
+userSchema.statics.signup = async function (userName, userType, email, password) {
     const exists = await this.findOne({ email })
     if (exists){
         throw Error("Email already in use")
@@ -26,7 +27,7 @@ userSchema.statics.signup = async function (userName, email, password) {
     const salt = await bcrypt.genSalt(10)
     const passhash = await bcrypt.hash(password, salt)
     
-    const user = await this.create({ userName, email, password: passhash, connections: [] })
+    const user = await this.create({ userName, userType, email, password: passhash, connections: [] })
     
     return user
 }

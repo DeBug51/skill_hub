@@ -21,10 +21,10 @@ const loginUser = async (req, res) => {
 }
 
 const signupUser = async (req, res) => {
-    const { userName, email, password } = req.body
+    const { userName, userType, email, password } = req.body
 
     try {
-        const user = await Users.signup(userName, email, password)
+        const user = await Users.signup(userName, userType, email, password)
         res.status(200).json(user)
     } catch (error) {
         res.status(400).json({ error: error.message })

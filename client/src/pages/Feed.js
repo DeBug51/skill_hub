@@ -18,7 +18,7 @@ const Feed = () => {
     
     return (
         <div className="Feed">
-            {posts && posts.map(post => (
+            {posts && posts.map((post) => (
                 <DisplayPost post = { post }></DisplayPost>
             ))}
         </div>
