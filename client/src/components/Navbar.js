@@ -1,3 +1,5 @@
+import "./Navbar.css"
+
 import { Link } from "react-router-dom";
 
 // import hooks
@@ -13,17 +15,21 @@ const NavBar = () => {
     }
 
     return (
-        <nav>
-            <Link to = "/">SkillHub</Link>
-            {user && <ul>
-                <li><Link to = "/feed">Feed</Link></li>
-                <li><Link to = "/chat">Chat</Link></li>
+        <nav className="navbar">
+            <Link to = "/">
+                <p className="name"><span>S</span>kill<span>H</span>ub</p>
+            </Link>
+
+            {user && <ul className="menu">
                 <li><Link to = "/profile">Profile</Link></li>
-                <button onClick={ handleLogout }>Logout</button>
+                <li><Link to = "/connect"><p>Connect</p></Link></li>
+                <li><Link to = "/feed"><p>Feed</p></Link></li>
+                <li><Link to = "/chat"><p>Chat</p></Link></li>
+                <li onClick={ handleLogout }><p>Logout</p></li>
             </ul>}
-            {!user && <ul>
-                <li><Link to = "/login">Login</Link></li>
-                <li><Link to = "/signup">Signup</Link></li>
+            {!user && <ul className="menu">
+                <li><Link to = "/login"><p>Login</p></Link></li>
+                <li><Link to = "/signup"><p>Signup</p></Link></li>
             </ul>}
         </nav>
     );

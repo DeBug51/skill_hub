@@ -1,7 +1,13 @@
+import "./DisplayChat.css"
+
+// import hooks
+import { useAuthContext } from "../hooks/useAuthContext"
+
 const DisplayChat = ({ chat }) => {
+    const { user } = useAuthContext()
+
     return (
-        <div>
-            <p>{chat.sender}</p>
+        <div className={user._id == chat.sender? "dispchat user":"dispchat"}>
             <p>{chat.text}</p>
         </div>
     );

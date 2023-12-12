@@ -1,3 +1,5 @@
+import "./Login.css"
+
 import { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
 
@@ -13,7 +15,7 @@ const Login = () => {
     }
 
     return (
-        <div className="Login">
+        <div className="login">
             <form className="loginform" onSubmit={ handleLogin }>
                 <p>Login</p>
                 <label>Email:</label>
@@ -28,7 +30,7 @@ const Login = () => {
                     onChange = {(e) => setPassword(e.target.value)}
                     value = { password }
                 />
-                <input
+                <input className="button"
                     type = "submit"
                     value = { "Login" }
                 />

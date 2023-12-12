@@ -1,0 +1,61 @@
+.navbar {
+    z-index: 10;
+    width: 100%;
+    height: 40px;
+    padding-left: 2%;
+    padding-right: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    background: var(--background);
+}
+
+.navbar .name {
+    color: var(--secondary);
+    font-size: 22px;
+    font-weight: 600;
+    text-align: initial;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navbar .name span {
+    color:var(--primary);
+}
+
+.navbar .menu li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar .menu li:hover {
+    cursor: pointer;
+    background-color: var(--primary);
+}
+
+.navbar .menu li p {
+    color: var(--secondary);
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.navbar .menu .button {
+    position: relative;
+    color: var(--primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    background: transparent;
+    border-radius: 5px;
+}
+  
+.navbar .menu .button:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
+    transition-delay: 0.2s;
+    cursor: pointer;
+}

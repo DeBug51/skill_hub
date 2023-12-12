@@ -1,0 +1,21 @@
+.comment {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--quinary);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.comment .name {
+    color: var(--quaternary);
+    font-size: 15px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.comment .content {
+    color: var(--secondary);
+    font-size: 15px;
+    margin: 5px 0;
+}

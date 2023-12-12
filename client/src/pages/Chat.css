@@ -1,0 +1,57 @@
+.chat {
+    display: flex;
+}
+
+.chat .chatheads {
+    background-color: var(--tertiary);
+    width: 20vw;
+    height: 95vh;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.chat .chatbox {
+    background-color: var(--tertiary);
+    width: 80vw;
+    height: 95vh;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.chat .chatbox .chats {
+    height: 95%;
+}
+
+.chat .chatbox .text {
+    height: 5%;
+}
+
+.chat .chatbox .text .box {
+    width: 90%;
+    height: 30px;
+    padding: 5px;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.chat .chatbox .text .button {
+    position: relative;
+    padding: 2px 5px;
+    color: var(--primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 15px;
+    background: transparent;
+    border-radius: 5px;
+}
+
+.chat .chatbox .text .button:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
+    transition-delay: 0.2s;
+    cursor: pointer;
+}

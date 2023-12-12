@@ -3,8 +3,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 // import pages
 import Home from './pages/Home'
+
 import Feed from './pages/Feed'
 import Chat from './pages/Chat'
+import Connect from './pages/Connect'
+
 import Signup from './pages/Signup'
 import Login from './pages/Login'
 import Test from './pages/Test'
@@ -15,7 +18,7 @@ import NavBar from './components/Navbar';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <BrowserRouter>
         <NavBar />
         <div className='pages'>
@@ -41,12 +44,12 @@ function App() {
               element = {<Chat />}
             />
             <Route
-              path = "/test"
-              element = {<Test />}
-            />
-            <Route
               path = "/profile"
               element = {<Profile />}
+            />
+            <Route
+              path = "/connect"
+              element = {<Connect />}
             />
           </Routes>
         </div>

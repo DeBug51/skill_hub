@@ -1,3 +1,4 @@
+import "./DisplayPost.css"
 import { useState } from "react";
 
 // import hooks
@@ -28,27 +29,28 @@ const DisplayPost = ({ post }) => {
 
     return (
         <div className="post">
-            <div className="postCont">
-                <p>{ post.creatorName }</p>
-                <p>{ post.content }</p>
-                <p>{ post.voteCount }</p>
-                <p>{ post.commentCount }</p>
+            <div className="container">
+                <p className="name">{ post.creatorName }</p>
+                <p className="content">{ post.content }</p>
+                <div className="stat">
+                    <p>{ post.voteCount } Upvotes</p>
+                    <p>{ post.commentCount } Comments</p>
+                </div>
             </div>
-            <div className="reactCont">
-                <button onClick={handleUpvote}>Upvote</button>
-                <button onClick={handleGetComment}>Comment</button>
+            <div className="react">
+                <p onClick={handleUpvote}>Upvote</p>
+                <p onClick={handleGetComment}>Comment</p>
             </div>
             {comments && comments.map(comment => (
                 <DisplayComment comment={ comment }></DisplayComment>
             ))}
             <form className="commentform" onSubmit={ handleComment }>
-                <label>Comment:</label>
-                <input
+                <input className="box"
                     type = "text"
                     onChange = {(e) => setUserComm(e.target.value)}
                     value = { userComm }
                 />
-                <input
+                <input className="button"
                     type = "submit"
                     value = { "Comment" }
                 />

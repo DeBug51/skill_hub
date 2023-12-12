@@ -1,8 +1,10 @@
+import "./DisplayComment.css"
+
 const DisplayComment = ({ comment }) => {
     return ( 
-        <div>
-            <p>{ comment.userName }</p>
-            <p>{ comment.comment }</p>
+        <div className="comment">
+            <p className="name">{ comment.userName }</p>
+            <p className="content">{ comment.comment }</p>
         </div>
      );
 }
