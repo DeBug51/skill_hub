@@ -4,7 +4,8 @@ const Task = require("../models/taskModel")
 // create a task
 const taskCreate = async(req,res) => {
     try{
-        const task = await Task.create(req.body)
+        const {creatorId,creatorName,category,description} = req.body
+        const task = await Task.create({creatorId,creatorName,category,description,selector:[],completedBy:[]})
         res.status(200).json(task)
     } catch (error){
         res.status(400).json({msg : error.message})
@@ -27,7 +28,7 @@ const getTask = async(req,res) => {
 // get all task
 const getTasks = async(req,res) => {
     try{
-        const tasks = await Task.find(req.body)
+        const tasks = await Task.find({})
         res.status(200).json(tasks)
     } catch (error){
         res.status(400).json({msg : error.message})
@@ -38,9 +39,8 @@ const getTasks = async(req,res) => {
 const updateTask = async(req,res) => {
     try{
         const {id} = req.params
-        const task = await Task.findByIdAndUpdate(
-            {_id: id}, req.body,{new: true}
-            )
+        const {category,description} = req.body
+        const task = await Task.findByIdAndUpdate(id, {category,description})
         if (!id) {
             throw Error("Task can not find!!")}
         res.status(200).json(task)
@@ -53,7 +53,7 @@ const updateTask = async(req,res) => {
 const deleteTask = async(req,res) => {
     try{
         const {id} = req.params
-        const task = Task.findByIdAndDelete(id)
+        await Task.findByIdAndDelete(id)
         if (!id) {
             throw Error("Task can not find!!")}
         res.status(200).send('Task deleted')

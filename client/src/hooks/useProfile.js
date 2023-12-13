@@ -1,9 +1,9 @@
 import { useState } from "react"
 
 const useProfile = () => {
-    const [friend, setFriend] = useState(null)
+    const [friends, setFriends] = useState(null)
     const [userInfo, setUserInfo] = useState(null)
-    const [post, setPost] = useState(null)
+    const [posts, setPosts] = useState(null)
     const [error, setError] = useState(null)
 
     const getFriend = async (userId) => {
@@ -15,7 +15,7 @@ const useProfile = () => {
         if (!response.ok) {
             setError(json.error)
         } else {
-            setFriend(json)
+            setFriends(json.connections)
         } 
     }
 
@@ -41,12 +41,12 @@ const useProfile = () => {
         if (!response.ok) {
             setError(json.error)
         } else {
-            setPost(json)
+            setPosts(json)
         } 
     }
 
 
-    return {getFriend, getUser, getPost, friend, userInfo, post, error};
+    return {getFriend, getUser, getPost, friends, userInfo, posts, error};
 } 
  
 export default useProfile;

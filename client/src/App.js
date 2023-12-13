@@ -10,7 +10,7 @@ import Connect from './pages/Connect'
 
 import Signup from './pages/Signup'
 import Login from './pages/Login'
-import Test from './pages/Test'
+import Task from './pages/Task'
 import Profile from './pages/Profile'
 
 // import components
@@ -50,6 +50,10 @@ function App() {
             <Route
               path = "/connect"
               element = {<Connect />}
+            />
+            <Route
+              path = "/task"
+              element = {<Task />}
             />
           </Routes>
         </div>

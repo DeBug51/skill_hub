@@ -34,7 +34,16 @@ const completeTaskSchema = mongoose.Schema(
 
 const taskSchema = mongoose.Schema(
     {
-        cetagory:{
+        creatorId:{
+            type: mongoose.Schema.Types.ObjectId, 
+            required: true, 
+            ref: "Users"
+        },
+        creatorName:{
+            type: String,
+            required:true
+        },
+        category:{
             type: String,
             required:true
         },
@@ -42,13 +51,9 @@ const taskSchema = mongoose.Schema(
             type : String,
             required : true
         },
-        completed:{
-            type: Boolean,
-            required: true,
-            default: false
-        },
         selector:[selectTaskSchema],
-        completed:[completeTaskSchema]
+        completedBy:[completeTaskSchema]
+        
     },
     {
         timestamps : true

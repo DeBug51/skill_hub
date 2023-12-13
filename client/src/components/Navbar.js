@@ -21,10 +21,11 @@ const NavBar = () => {
             </Link>
 
             {user && <ul className="menu">
-                <li><Link to = "/profile">Profile</Link></li>
+                <li><Link to = "/profile"><p>Profile</p></Link></li>
                 <li><Link to = "/connect"><p>Connect</p></Link></li>
                 <li><Link to = "/feed"><p>Feed</p></Link></li>
                 <li><Link to = "/chat"><p>Chat</p></Link></li>
+                <li><Link to = "/task"><p>Tasks</p></Link></li>
                 <li onClick={ handleLogout }><p>Logout</p></li>
             </ul>}
             {!user && <ul className="menu">

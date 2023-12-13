@@ -1,11 +1,15 @@
+import "./Profile.css"
 import { useEffect } from "react";
 import useProfile from '../hooks/useProfile';
 import DisplayProfile from "../components/DisplayProfile";
+import DisplayPost from "../components/DisplayPost";
+import DisplayFriend from "../components/DisplayFriend";
 import { useAuthContext } from "../hooks/useAuthContext"
 
 
+
 const Profile = () => {
-    const {getFriend, getUser, getPost, friend, userInfo, post, error} = useProfile()
+    const {getFriend, getUser, getPost, friends, userInfo, posts} = useProfile()
     const { user } = useAuthContext()
     useEffect(() => {
         const getAllInfo = async () => {
@@ -16,15 +20,19 @@ const Profile = () => {
         getAllInfo()
     }, [])
     return ( 
-        <div>
+        <div className="profile">
             <div>
                 {userInfo && <DisplayProfile userInfo={userInfo}/>} 
             </div>
             <div>
-                <p>Post</p>
+                {posts && posts.map( (post) => (
+                    <DisplayPost post = { post }></DisplayPost>
+                ))}
             </div>
             <div>
-                <p>Friends</p>
+                {friends && friends.map( (friend) => (
+                    <DisplayFriend friend = { friend }></DisplayFriend>
+                ))}
             </div>
         </div>
         

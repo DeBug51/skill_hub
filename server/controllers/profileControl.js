@@ -1,5 +1,6 @@
 // import model
 const Users = require('../models/userModel')
+const Posts = require('../models/postModel')
 
 const getFriends = async(req, res) => {
     const {userId} = req.params
@@ -24,7 +25,7 @@ const getUserInfo = async(req, res) => {
 const getPostInfo = async(req, res) => {
     const {creatorId} = req.params
     try{
-        const post = await Users.findById(creatorId)
+        const post = await Posts.find({creatorId})
         res.status(200).json(post)
     }catch(error){
         res.status(400).json({ error: error.message })
