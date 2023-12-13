@@ -28,7 +28,6 @@ const useChat = () => {
             setError(json.error)
         } else {
             setChats(json.messages)
-            console.log(chats)
         }
     }
 

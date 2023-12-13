@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Signup = () => {
     const [userName, setUserName] = useState("")
-    const [userType, setUserType] = useState("")
+    const [userType, setUserType] = useState("company")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState(null)
@@ -39,8 +39,8 @@ const Signup = () => {
                 />
                 <label>User Type:</label>
                 <select value={userType} onChange={(e) => setUserType(e.target.value)}>
-                    <option value="Company">Company</option>
-                    <option value="Student">Student</option>
+                    <option value="company">Company</option>
+                    <option value="student">Student</option>
                 </select>
                 <label>Email:</label>
                 <input

@@ -1,36 +1,16 @@
 const mongoose = require('mongoose')
 
-const selectTaskSchema = mongoose.Schema(
-    {
-        userName:{
-            type : String,
-            required:true
-        }
-    },
-    {
-        userId:{
-            type: mongoose.Schema.Types.ObjectId, 
-            required: true, 
-            ref: "Users"
-        }
-    }
-)
-
 const completeTaskSchema = mongoose.Schema(
     {
         userName:{
             type : String,
             required:true
-        }
-    },
-    {
+        },
         userId:{
             type: mongoose.Schema.Types.ObjectId, 
             required: true, 
             ref: "Users"
-        }
-    },
-    {
+        },
         link:{
             type: String, 
             required: true
@@ -57,7 +37,10 @@ const taskSchema = mongoose.Schema(
             type : String,
             required : true
         },
-        selector:[selectTaskSchema],
+        compCount:{
+            type: Number,
+            required: true
+        },
         completedBy:[completeTaskSchema]
         
     },

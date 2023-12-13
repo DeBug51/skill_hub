@@ -5,7 +5,7 @@ const Task = require("../models/taskModel")
 const taskCreate = async(req,res) => {
     try{
         const {creatorId,creatorName,category,description} = req.body
-        const task = await Task.create({creatorId,creatorName,category,description,selector:[],completedBy:[]})
+        const task = await Task.create({creatorId,creatorName,category,description,compCount:0,completedBy:[]})
         res.status(200).json(task)
     } catch (error){
         res.status(400).json({msg : error.message})
@@ -76,7 +76,7 @@ const selectTask = async(req,res) => {
 const completeTask = async(req,res) => {
     try{
         const { taskId, userId, userName, link} = req.body
-        const task = await Task.findByIdAndUpdate(taskId, { $push: { completedBy: { userId, userName, link } } }, {returnOriginal: false})
+        const task = await Task.findByIdAndUpdate(taskId, { $push: { completedBy: { userId, userName, link } }, $inc: { compCount: 1 } }, {returnOriginal: false})
         res.status(200).json(task)
     } catch(error){
         res.status(400).json({ error: error.message })

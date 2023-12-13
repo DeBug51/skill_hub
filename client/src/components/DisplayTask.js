@@ -10,12 +10,8 @@ import DisplayComplete from "./DisplayComplete";
 
 const DisplayPost = ({ task }) => {
     const { user } = useAuthContext()
-    const { selectTask, completeTask } = useTask()
+    const { completeTask } = useTask()
     const [link, setLink] = useState("")
-
-    const handleSelect = async () => {
-        await selectTask(task._id, user._id, user.userName)
-    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -29,14 +25,14 @@ const DisplayPost = ({ task }) => {
                 <p className="name">{ task.creatorName }</p>
                 <p className="content">Category: { task.category }</p>
                 <p className="content">Description: { task.description }</p>
-                <p>Completed By:</p>
-                {task.completedBy && task.completedBy.map(completer => (
-                    <DisplayComplete completer={ completer }/>
-                ))}
+                <div className="stat">
+                    <p>{ task.compCount } completers</p>
+                </div>
             </div>
+            {task.completedBy && task.completedBy.map(completer => (
+                <DisplayComplete completer={ completer }/>
+            ))}
 
-            {user.userType=="student" && <div className="react" onClick={ handleSelect }>Select</div>}
-            
             {user.userType=="student" && <form className="submitform" onSubmit={ handleSubmit }>
                 <input className="box"
                     type = "text"

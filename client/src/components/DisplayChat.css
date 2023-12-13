@@ -1,7 +1,8 @@
 .dispchat {
-    display: inline-block;
+    display: block;
     padding: 10px;
     margin: 10px;
+    width: 50%;
     color: var(--secondary);
     background-color: var(--quinary);
     border-radius: 15px;

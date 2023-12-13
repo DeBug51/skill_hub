@@ -2,9 +2,9 @@ import "./DisplayComplete.css"
 
 const DisplayComplete = ({ completer }) => {
     return (
-        <div className="comment">
-            <p className="name">{ completer.userName }</p>
-            <p className="content">{ completer.link }</p>
+        <div className="complete">
+            <p className="completer">{ completer.userName }</p>
+            <p className="link">{ completer.link }</p>
         </div>
      );
 }

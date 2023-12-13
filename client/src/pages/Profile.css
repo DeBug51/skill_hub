@@ -1,3 +1,31 @@
-.profile{
-    color: antiquewhite;
+.profile {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px
+}
+
+.profile .info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 500px;
+    color: var(--secondary);
+}
+
+.profile .info .header {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.profile .info .userinfo {
+    background-color: var(--tertiary);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.profile .info .friends {
+    background-color: var(--tertiary);
+    border-radius: 5px;
+    padding: 10px;
 }

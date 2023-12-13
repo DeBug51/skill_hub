@@ -17,7 +17,7 @@ const Task = () => {
         getAllTasks()
     }, [])
     return (
-        <div className="task">
+        <div className="taskpage">
             {tasks && tasks.map(task => (
                 <DisplayTask task = { task }/>
             ))}

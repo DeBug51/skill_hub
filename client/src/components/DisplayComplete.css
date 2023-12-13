@@ -1,4 +1,4 @@
-.comment {
+.complete {
     display: flex;
     flex-direction: column;
     background-color: var(--quinary);
@@ -7,14 +7,14 @@
     border-radius: 5px;
 }
 
-.comment .name {
+.complete .completer {
     color: var(--quaternary);
     font-size: 15px;
     font-weight: 600;
     margin: 5px 0;
 }
 
-.comment .content {
+.complete .link {
     color: var(--secondary);
     font-size: 15px;
     margin: 5px 0;

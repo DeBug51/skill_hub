@@ -2,7 +2,7 @@ import "./DisplayFriend.css"
 
 const DisplayFriend = ({ friend }) => {
     return (
-        <div>
+        <div className="frindinfo">
             <p>{friend.userName}</p>
         </div>
     );

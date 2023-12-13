@@ -1,0 +1,48 @@
+.createpost {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    width: 600px;
+    background-color: var(--tertiary);
+    border-radius: 5px;
+}
+
+.createpost .name {
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.createpost .postform {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.createpost .postform .box {
+    width: 450px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.createpost .postform .button {
+    position: relative;
+    width: 70px;
+    padding: 2px 5px;
+    color: var(--primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 15px;
+    background: transparent;
+    border-radius: 5px;
+}
+
+.tacreatepostsk .postform .button:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
+    transition-delay: 0.2s;
+    cursor: pointer;
+}

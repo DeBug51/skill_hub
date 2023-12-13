@@ -1,4 +1,4 @@
-.task {
+.createtask {
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -8,47 +8,29 @@
     border-radius: 5px;
 }
 
-.task .container {
-    display: flex;
-    flex-direction: column;
-}
-
-.task .container .name {
+.createtask .name {
     color: var(--primary);
     font-size: 20px;
     font-weight: 600;
     margin: 5px 0;
 }
 
-.task .container .content {
-    color: var(--secondary);
-    font-size: 20px;
-    margin: 5px 0;
-}
-
-.task .container .stat{
+.createtask .taskform {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.task .container .stat p {
+    flex-direction: column;
+    gap: 10px;
     color: var(--secondary);
-    font-size: 15px;
 }
 
-.task .submitform {
-    justify-content: space-between;
-}
-
-.task .submitform .box {
+.createtask .taskform .box {
     width: 450px;
     text-decoration: none;
     border-radius: 5px;
 }
 
-.task .submitform .button {
+.createtask .taskform .button {
     position: relative;
+    width: 70px;
     padding: 2px 5px;
     color: var(--primary);
     text-decoration: none;
@@ -59,7 +41,7 @@
     border-radius: 5px;
 }
 
-.task .submitform  .button:hover {
+.tacreatetasksk .taskform .button:hover {
     background-color: var(--primary);
     color: var(--secondary);
     transition-delay: 0.2s;

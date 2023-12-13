@@ -1,9 +1,11 @@
+import "./DisplayProfile.css"
+
 const DisplayProfile = ({ userInfo }) => {
     return ( 
-        <div>
-            <p>{ userInfo.userName }</p>
-            <p>{ userInfo.userType }</p>
-            <p>{ userInfo.email }</p>
+        <div className="proinfo">
+            <p>Name: { userInfo.userName }</p>
+            <p>Category: { userInfo.userType }</p>
+            <p>Email: { userInfo.email }</p>
         </div>
      );
 }
