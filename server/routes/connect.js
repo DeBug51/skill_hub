@@ -4,7 +4,7 @@ const router = require("express").Router()
 const { getUsers, createConnection } = require("../controllers/connectControl")
 
 // define routes
-router.get("/users", getUsers)
+router.get("/users/:userId", getUsers)
 
 router.post("/add", createConnection)
 

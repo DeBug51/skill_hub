@@ -5,7 +5,8 @@ const Chats = require("../models/chatModel")
 // define controllers
 const getUsers = async (req, res) => {
     try {
-        const users = await Users.find({}).select("userName")
+        const { userId } = req.params
+        const users = await Users.find({$and: [{"connections.userId": {$ne: userId}}, {_id: {$ne: userId}}]}).select("userName")
         res.status(200).json(users)
     } catch(error) {
         res.status(400).json({ error: error.message })

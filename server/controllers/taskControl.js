@@ -16,7 +16,7 @@ const taskCreate = async(req,res) => {
 const getTask = async(req,res) => {
     try{
         const {id} = req.params
-        const task = await Task.findById(id)
+        const task = await Task.find({creatorId: id})
         if (!id) {
             throw Error("Task can not find!!")}
         res.status(200).json(task)
@@ -75,8 +75,8 @@ const selectTask = async(req,res) => {
 // complete task
 const completeTask = async(req,res) => {
     try{
-        const { taskId, userId, userName} = req.body
-        const task = await Task.findByIdAndUpdate(taskId, { $push: { completed: { userId, userName } } }, {returnOriginal: false})
+        const { taskId, userId, userName, link} = req.body
+        const task = await Task.findByIdAndUpdate(taskId, { $push: { completedBy: { userId, userName, link } } }, {returnOriginal: false})
         res.status(200).json(task)
     } catch(error){
         res.status(400).json({ error: error.message })

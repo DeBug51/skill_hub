@@ -33,7 +33,7 @@ userSchema.statics.signup = async function (userName, userType, email, password)
 }
 
 userSchema.statics.login = async function (email, password) {
-    const user = await this.findOne({ email }).select("userName password")
+    const user = await this.findOne({ email }).select("userName password userType")
     if (!user) {
         throw Error("Email does not match.")
     }
@@ -42,7 +42,6 @@ userSchema.statics.login = async function (email, password) {
     if (!match) {
         throw Error("Password does not match.")
     }
-
     return user
 }
 

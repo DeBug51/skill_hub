@@ -27,7 +27,7 @@ const useTask = () => {
         })
     }
 
-    const updateTask = async (category,description) => {
+    const updateTask = async (id,category,description) => {
         await fetch("/api/task/update/"+id, {
             method: "PATCH",
             headers: {"Content-Type": "application/json"},
@@ -43,11 +43,11 @@ const useTask = () => {
         })
     }
 
-    const completeTask = async (taskId, userId, userName) => {
+    const completeTask = async (taskId, userId, userName, link) => {
         await fetch("/api/task/complete", {
             method: "PATCH",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({ taskId, userId, userName })
+            body: JSON.stringify({ taskId, userId, userName, link })
         })
     }
 

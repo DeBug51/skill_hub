@@ -29,6 +29,12 @@ const completeTaskSchema = mongoose.Schema(
             required: true, 
             ref: "Users"
         }
+    },
+    {
+        link:{
+            type: String, 
+            required: true
+        }
     }
 )
 

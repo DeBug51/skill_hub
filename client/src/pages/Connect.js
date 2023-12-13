@@ -3,25 +3,26 @@ import { useEffect } from "react"
 
 // import hooks
 import { useConnect } from "../hooks/useConnect"
+import { useAuthContext } from "../hooks/useAuthContext"
 
 // import components
 import DisplayUser from "../components/DisplayUser"
 
 const Connect = () => {
+    const { user } = useAuthContext()
     const { getUsers, users } = useConnect()
 
     useEffect(() => {
         const getAllUsers = async () => {
-            await getUsers()
+            await getUsers(user._id)
         }
         getAllUsers()
-        {console.log(users)}
     }, [])
     
     return (
         <div className="connect">
-            {users && users.map(user => (
-                <DisplayUser tarUser = { user }></DisplayUser>
+            {users && users.map(tarUser => (
+                <DisplayUser tarUser = { tarUser }></DisplayUser>
             ))}
         </div>
     )

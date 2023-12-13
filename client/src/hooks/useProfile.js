@@ -4,6 +4,7 @@ const useProfile = () => {
     const [friends, setFriends] = useState(null)
     const [userInfo, setUserInfo] = useState(null)
     const [posts, setPosts] = useState(null)
+    const [tasks, setTasks] = useState(null)
     const [error, setError] = useState(null)
 
     const getFriend = async (userId) => {
@@ -45,8 +46,21 @@ const useProfile = () => {
         } 
     }
 
+    const getTask = async (creatorId) => {
+        const response = await fetch("/api/task/get/"+creatorId, {
+            method: "GET"
+        })
+        const json = await response.json()
 
-    return {getFriend, getUser, getPost, friends, userInfo, posts, error};
+        if (!response.ok) {
+            setError(json.error)
+        } else {
+            setTasks(json)
+        }
+    }
+
+
+    return {getFriend, getUser, getPost, getTask, friends, userInfo, posts, tasks, error};
 } 
  
 export default useProfile;

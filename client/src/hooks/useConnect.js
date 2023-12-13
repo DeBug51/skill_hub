@@ -4,8 +4,8 @@ const useConnect = () => {
     const [users, setUsers] = useState(null)
     const [error, setError] = useState(null)
 
-    const getUsers = async () => {
-        const response = await fetch("/api/connect/users", {
+    const getUsers = async (userId) => {
+        const response = await fetch("/api/connect/users/"+userId, {
             method: "GET"
         })
         const json = await response.json()
