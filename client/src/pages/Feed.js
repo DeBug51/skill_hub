@@ -5,6 +5,7 @@ import { useEffect } from "react"
 import { usePost } from "../hooks/usePost"
 
 // import components
+import CreatePost from "../components/CreatePost"
 import DisplayPost from "../components/DisplayPost"
 
 const Feed = () => {
@@ -19,6 +20,7 @@ const Feed = () => {
     
     return (
         <div className="feed">
+            <CreatePost />
             {posts && posts.map(post => (
                 <DisplayPost post = { post }></DisplayPost>
             ))}

@@ -2,6 +2,7 @@ import "./Task.css"
 import { useEffect } from "react"
 
 // import components
+import CreateTask from "../components/CreateTask"
 import DisplayTask from "../components/DisplayTask"
 
 // import hooks
@@ -18,6 +19,7 @@ const Task = () => {
     }, [])
     return (
         <div className="taskpage">
+            <CreateTask />
             {tasks && tasks.map(task => (
                 <DisplayTask task = { task }/>
             ))}
